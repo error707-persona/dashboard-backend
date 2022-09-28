@@ -1,57 +1,16 @@
-const mongoose = require("mongoose");
-const dataSchema = new mongoose.Schema({
-    end_year:{},
-    internsity:{
-        type: Number,
-        required:true 
-    },
-    sector:{
-        type:String
-    },
-    topic:{
-        type:String
-    },
-    insight:{
-        type:String
-    },
-    url:{
-        type:String
-    },
-    region:{
-        type:String
-    },
-    start_year:{
-        type:String
-    },
-    impact:{
-        type:String
-    },
-    added: {
-        type:String
-    },
-    published:{
-        type:String
-    },
-    country:{
-        type:String
-    },
-    relevance:{
-        type:Number
-    },
-    pestle:{
-        type:String
-    },
-    source:{
-        type:String
-    },
-    title:{
-        type:String
-    },
-    likelihood:{
-        type:Number
-    },
-    
-});
+const mongoose = require('mongoose');
+const schema = mongoose.Schema({
+  title:'String',
+  tagline:'String',
+  note:'String',
+  pinned:{
+    type:String,
+    default:'false'
+  }
+},{timestamps:true})
 
-module.exports = mongoose.model('insights', dataSchema);
+
+const NotesModel = mongoose.model('Notes', schema);
+module.exports = NotesModel;
+
 
